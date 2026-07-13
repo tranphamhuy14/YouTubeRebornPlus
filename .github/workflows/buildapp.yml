@@ -106,8 +106,8 @@ jobs:
         run: |
           cd ${{ github.workspace }}/main/Tweaks/YTUHD
           mkdir -p vpx dav1d
-          curl -sL https://raw.githubusercontent.com/PoomSmart/YTUHD/master/vpx/vpx_decoder.h -o vpx/vpx_decoder.h
-          curl -sL https://raw.githubusercontent.com/PoomSmart/YTUHD/master/dav1d/dav1d.h -o dav1d/dav1d.h
+          curl -sL https://raw.githubusercontent.com/webmproject/libvpx/908e88c1aa6a12a86feb5d36a919c219c42f1e2c/vpx/vpx_decoder.h
+          curl -sL https://raw.githubusercontent.com/videolan/dav1d/refs/heads/master/include/dav1d/dav1d.h
       - name: Install Theos Jailed
         run: |
           ./theos-jailed/install
