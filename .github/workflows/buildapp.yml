@@ -102,6 +102,17 @@ jobs:
           ref: master
           path: theos-jailed
           submodules: recursive
+      - name: Download YTUHD Required Headers
+        run: |
+          cd ${{ github.workspace }}/main/Tweaks/YTUHD
+          mkdir -p vpx dav1d
+          curl -sL https://raw.githubusercontent.com/PoomSmart/YTUHD/master/vpx/vpx_decoder.h -o vpx/vpx_decoder.h
+          curl -sL https://raw.githubusercontent.com/PoomSmart/YTUHD/master/dav1d/dav1d.h -o dav1d/dav1d.h
+      - name: Install Theos Jailed
+        run: |
+          ./theos-jailed/install
+        env:
+          THEOS: ${{ github.workspace }}/theos
 
       - name: Install Theos Jailed
         run: |
